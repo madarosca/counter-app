@@ -1,0 +1,1 @@
+export const DEFAULT_RANDOM_COUNTERS = 10;
