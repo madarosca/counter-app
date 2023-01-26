@@ -33,7 +33,7 @@ export const CountersProvider = ({ children }) => {
 		const num = !!countersNumber ? parseInt(countersNumber) : DEFAULT_RANDOM_COUNTERS;
 		let counters = [];
 
-		if (num > 15) setCountersNumber(15);
+		if (num > 20) setCountersNumber(20);
 
 		for (let i = 1; i <= num; i++) {
 			counters.push({ id: i, value: Math.floor(Math.random() * i) });
