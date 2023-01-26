@@ -1,19 +1,31 @@
-import React, { Fragment, useContext } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Counters from './components/counter/counters';
+import Home from './components/home/home';
+import Navigation from './components/navigation/navigation';
+import Profiles from './components/profiles/profiles';
 import './App.css';
-import Counters from './components/counters';
-import Navbar from './components/navbar';
 
 const App = () => {
 	return (
-		<Fragment>
-			<Navbar />
-			<main
-				role='main'
-				className='container'
+		<Routes>
+			<Route
+				path='/'
+				element={<Navigation />}
 			>
-				<Counters />
-			</main>
-		</Fragment>
+				<Route
+					index
+					element={<Home />}
+				/>
+				<Route
+					path='counters'
+					element={<Counters />}
+				/>
+				<Route
+					path='profiles'
+					element={<Profiles />}
+				/>
+			</Route>
+		</Routes>
 	);
 };
 
