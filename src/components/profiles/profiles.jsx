@@ -29,7 +29,10 @@ const Profiles = () => {
 			<div className='col-md-6 mx-auto text-center'>
 				<h1 className='mb-3'>Profile Scroller</h1>
 				<div id='imageDisplay'>
-					<img src={currentProfile.image} />
+					<img
+						src={currentProfile.image}
+						alt='profile'
+					/>
 				</div>
 				<br />
 				<div id='profileDisplay'>

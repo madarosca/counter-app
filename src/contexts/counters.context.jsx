@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useEffect, useState } from 'react';
 import { DEFAULT_RANDOM_COUNTERS } from '../constants/constants';
 
 const resetCounters = (counters) => counters.map((counter) => ({ ...counter, value: 0 }));
@@ -29,7 +29,7 @@ export const CountersProvider = ({ children }) => {
 	const [countersSum, setCountersSum] = useState(0);
 	const [countersNumber, setCountersNumber] = useState('');
 
-	const generateCounters = () => {
+	const generateCounters = useCallback(() => {
 		const num = !!countersNumber ? parseInt(countersNumber) : DEFAULT_RANDOM_COUNTERS;
 		let counters = [];
 
@@ -40,7 +40,7 @@ export const CountersProvider = ({ children }) => {
 		}
 
 		setCounters(counters);
-	};
+	}, [countersNumber]);
 
 	const setCountersNumberInput = (countersNumber) => {
 		setCountersNumber(countersNumber);
@@ -64,11 +64,11 @@ export const CountersProvider = ({ children }) => {
 
 	useEffect(() => {
 		generateCounters(countersTotal);
-	}, []);
+	}, [generateCounters, countersTotal]);
 
 	useEffect(() => {
 		generateCounters(countersNumber);
-	}, [countersNumber]);
+	}, [generateCounters, countersNumber]);
 
 	useEffect(() => {
 		setCountersTotal(counters.length);
