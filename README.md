@@ -1,6 +1,6 @@
 # About
 
-A small counter app, built with React 18, Hooks, Context API, Bootstrap.
+Small react demos, built with React 18, Hooks, Context API, Bootstrap.
 
 # Getting Started with Create React App
 
