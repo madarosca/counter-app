@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import { ReactComponent as AppLogo } from '../../assets/logo.svg';
+import './navigation.scss'
 
 const Navigation = () => {
 	return (
@@ -8,6 +10,12 @@ const Navigation = () => {
 				className='navbar navbar-expand-lg navbar-light'
 				style={{ backgroundColor: '#e3f2fd' }}
 			>
+				<Link
+					className='navbar-brand'
+					to='/'
+				>
+					<AppLogo className='logo' />
+				</Link>
 				<div
 					className='collapse navbar-collapse justify-content-end'
 					id='navigation-bar'
