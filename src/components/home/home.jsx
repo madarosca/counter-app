@@ -10,7 +10,7 @@ const Home = () => {
 					to='counters'
 					className='lead text-info text-uppercase px-5'
 				>
-					Counter app
+					Counters app
 				</Link>
 				<Link
 					to='profiles'

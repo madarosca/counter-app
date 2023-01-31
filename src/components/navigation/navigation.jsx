@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { ReactComponent as AppLogo } from '../../assets/logo.svg';
-import './navigation.scss'
+import './navigation.scss';
 
 const Navigation = () => {
 	return (
@@ -23,15 +23,15 @@ const Navigation = () => {
 					<div className='navbar-nav'>
 						<a
 							className='nav-link'
-							href='/profiles'
-						>
-							Profiles app
-						</a>
-						<a
-							className='nav-link'
 							href='/counters'
 						>
 							Counters app
+						</a>
+						<a
+							className='nav-link'
+							href='/profiles'
+						>
+							Profiles app
 						</a>
 					</div>
 				</div>
